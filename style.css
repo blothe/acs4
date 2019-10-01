@@ -10,11 +10,38 @@ body {
   position: absolute;
 }
 
-#pawn {
+#player {
   width: 25px;
   height: 25px;
   background-color: pink;
-  position: relative;
-  left: 0;
-  top: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+#ghost1 {
+  width: 25px;
+  height: 25px;
+  background-color: silver;
+  position: absolute;
+  left: 475px;
+  top: 0px;
+}
+
+#ghost2 {
+  width: 25px;
+  height: 25px;
+  background-color: silver;
+  position: absolute;
+  left: 0px;
+  top: 475px;
+}
+
+#ghost3 {
+  width: 25px;
+  height: 25px;
+  background-color: silver;
+  position: absolute;
+  left: 475px;
+  top: 475px;
 }

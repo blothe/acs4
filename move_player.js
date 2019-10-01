@@ -1,8 +1,8 @@
 var x = 0;
 var y = 0;
 
-var pawnPosX = x + "px";
-var pawnPosY = y + "px";
+var playerPosX = x + "px";
+var playerPosY = y + "px";
 
 function moveUp() {
   y -= 25;
@@ -21,13 +21,13 @@ function moveLeft() {
 }
 
 function reFresh() {
-  pawnPosX = x + "px";
-  pawnPosY = y + "px";
-  pawn.style.left = pawnPosX;
-  pawn.style.top = pawnPosY;
+  playerPosX = x + "px";
+  playerPosY = y + "px";
+  player.style.left = playerPosX;
+  player.style.top = playerPosY;
 }
 
-var pawn = document.getElementById("pawn");
+var player = document.getElementById("player");
 
 document.onkeydown = function(move) {
   switch (move.keyCode) {
