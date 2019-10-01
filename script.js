@@ -33,23 +33,31 @@ document.onkeydown = function(move) {
   switch (move.keyCode) {
 
     case 37:
-    moveLeft();
-    reFresh();
+    if (x > 0) {
+      moveLeft();
+      reFresh();
+    }
     break;
 
     case 38:
-    moveUp();
-    reFresh();
+    if (y > 0) {
+      moveUp();
+      reFresh();
+    }
     break;
 
     case 39:
-    moveRight();
-    reFresh();
+    if (x < 475) {
+      moveRight();
+      reFresh();
+    }
     break;
 
     case 40:
-    moveDown();
-    reFresh();
+    if (y < 475) {
+      moveDown();
+      reFresh();
+    }
     break;
 
     default:
