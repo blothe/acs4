@@ -4,9 +4,16 @@ body {
 }
 
 #board {
-  width: 500px;
-  height: 500px;
+  width: 525px;
+  height: 525px;
   background-color: powderblue;
+  position: absolute;
+}
+
+.obstacle {
+  width: 25px;
+  height: 25px;
+  background-color: black;
   position: absolute;
 }
 
@@ -24,7 +31,7 @@ body {
   height: 25px;
   background-color: silver;
   position: absolute;
-  left: 475px;
+  left: 500px;
   top: 0px;
 }
 
@@ -33,8 +40,8 @@ body {
   height: 25px;
   background-color: silver;
   position: absolute;
-  left: 0px;
-  top: 475px;
+  left: 500px;
+  top: 500px;
 }
 
 #ghost3 {
@@ -42,6 +49,6 @@ body {
   height: 25px;
   background-color: silver;
   position: absolute;
-  left: 475px;
-  top: 475px;
+  left: 0px;
+  top: 500px;
 }
