@@ -130,7 +130,7 @@ function animate(creature) {
 
   function canMoveDown() {
     var testX = x; // aucun changement sur l'axe x
-    var testY = y + 25; // test décalage d'une case vers le haut en valeur brute
+    var testY = y + 25; // test décalage d'une case vers le bas en valeur brute
     var testPosX = testX + "px"; // aucun changement sur l'axe x
     var testPosY = testY + "px"; // test nouvelle position sur l'axe y en pixels
     var testCoordinates = "[" + testPosX + " from left, " + testPosY + " from top]";
@@ -184,39 +184,89 @@ function animate(creature) {
 
   /* Docstring à compléter */
 
-  document.onkeydown = function(move) {
-    switch (move.keyCode) {
+  if (creature.id == "player") {
 
-      case 37:
-      if (canMoveLeft()) {
-        moveLeft();
+    document.onkeydown = function(move) {
+
+      switch (move.keyCode) {
+
+        case 37:
+        if (canMoveLeft()) {
+          moveLeft();
+        }
+        break;
+
+        case 38:
+        if (canMoveUp()) {
+          moveUp();
+        }
+        break;
+
+        case 39:
+        if (canMoveRight()) {
+          moveRight();
+        }
+        break;
+
+        case 40:
+        if (canMoveDown()) {
+          moveDown();
+        }
+        break;
+
+        default:
+        alert("Flèches directionnelles uniquement !");
+
       }
-      break;
 
-      case 38:
-      if (canMoveUp()) {
-        moveUp();
-      }
-      break;
-
-      case 39:
-      if (canMoveRight()) {
-        moveRight();
-      }
-      break;
-
-      case 40:
-      if (canMoveDown()) {
-        moveDown();
-      }
-      break;
-
-      default:
-      alert("Flèches directionnelles uniquement !");
     }
 
+  }
+
+  else {
+
+    function autoMove() {
+
+      var randMove = Math.floor(Math.random() * 4) + 1;
+
+      switch (randMove) {
+
+        case 1:
+        if (canMoveLeft()) {
+          moveLeft();
+        }
+        break;
+
+        case 2:
+        if (canMoveUp()) {
+          moveUp();
+        }
+        break;
+
+        case 3:
+        if (canMoveRight()) {
+          moveRight();
+        }
+        break;
+
+        case 4:
+        if (canMoveDown()) {
+          moveDown();
+        }
+        break;
+
+        default:
+        alert("Oups !")
+
+      }
+
+    }
+    setInterval(autoMove, 250);
   }
 
 }
 
 animate(player);
+animate(ghost1);
+animate(ghost2);
+animate(ghost3);
