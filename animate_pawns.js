@@ -1,10 +1,10 @@
-function animate(creature) {
+function animate(pawn) {
 
   // POSITION DE LA CRÉATURE *************************************************** DS/TODO
 
   /* Docstring à compléter */
 
-  switch(creature.id) {
+  switch(pawn.id) {
 
     case "player":
     // coordonnées en valeur brute
@@ -51,7 +51,7 @@ function animate(creature) {
 
   // RESTRICTION DÉPLACEMENT ***************************************************
 
-  /* Les tests suivant s'assurent que :
+  /* Les tests suivants s'assurent que :
   -- les créatures ne peuvent pas traverser les obstacles ;
   -- les créatures ne peuvent pas sortir du plateau de jeu.
   Ils seront effectués avant chaque déplacement, qui ne sera validé que s'il respecte ces conditions. */
@@ -159,32 +159,32 @@ function animate(creature) {
   function moveLeft() {
     x -=25; // modification + enregistrement de la position en valeur brute
     posX = x + "px"; // enregistrement de la position en pixels (CSS)
-    creature.style.left = posX; // application du style (propriété CSS)
+    pawn.style.left = posX; // application du style (propriété CSS)
   }
 
   function moveUp() {
     y -= 25; // modification + enregistrement de la position en valeur brute
     posY = y + "px"; // enregistrement de la position en pixels (CSS)
-    creature.style.top = posY; // application du style (propriété CSS)
+    pawn.style.top = posY; // application du style (propriété CSS)
   }
 
   function moveRight() {
     x += 25; // modification + enregistrement de la position en valeur brute
     posX = x + "px"; // enregistrement de la position en pixels (CSS)
-    creature.style.left = posX; // application du style (propriété CSS)
+    pawn.style.left = posX; // application du style (propriété CSS)
   }
 
   function moveDown() {
     y += 25; // modification + enregistrement de la position en valeur brute
     posY = y + "px"; // enregistrement de la position en pixels (CSS)
-    creature.style.top = posY; // application du style (propriété CSS)
+    pawn.style.top = posY; // application du style (propriété CSS)
   }
 
   // CONTRÔLE DU DÉPLACEMENT *************************************************** DS/TODO
 
   /* Docstring à compléter */
 
-  if (creature.id == "player") {
+  if (pawn.id == "player") {
 
     document.onkeydown = function(move) {
 
