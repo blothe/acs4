@@ -1,6 +1,9 @@
-// CRÉATION DE LA MAP ********************************************************** DS/TODO
+// CRÉATION DE LA MAP **********************************************************
 
-/* Docstring à compléter */
+/* Divise le plateau de jeu en cases de deux types différents :
+-- obstacles infranchissables ;
+-- freecells ou "cases libres".
+Les pions peuvent circuler, et les explosions se propager, uniquement sur les freecells ou "cases libres", pas sur les obstacles. */
 
 var id = 1; // incrémenté pour attribuer un "id" unique à chaque élément
 

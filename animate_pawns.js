@@ -1,8 +1,11 @@
 function animate(pawn) {
 
-  // POSITION DE LA CRÉATURE *************************************************** DS/TODO
+  // POSITION DE LA CRÉATURE ***************************************************
 
-  /* Docstring à compléter */
+  /* Pour chaque créature appelée, identification et enregistrement de ses coordonnées de départ :
+  -- en valeur brute à l'aide de variables x et y de type "int" incrémentés ou décrémentées pour ajuster et "mémoriser" sa position au fur et à mesure de ses déplacements (x et y sont des curseurs) ;
+  -- en pixels à l'aide de variables posX et posY de type composite "int" et "str" concaténées, exploitables par CSS et transmises à la feuille de style, dynamiquement (posX et posY sont des valeurs).
+  Ces coordonnées s'ajustent donc avec les déplacements, "dans la mémoire" et "à l'écran". */
 
   switch(pawn.id) {
 
@@ -38,9 +41,9 @@ function animate(pawn) {
 
   }
 
-  // POSITIONS DES OBSTACLES *************************************************** DS/TODO
+  // POSITIONS DES OBSTACLES ***************************************************
 
-  /* Docstring à compléter */
+  /* Enregistre les coordonnées des obstacles pour évaluer la faisabilité des déplacements. */
 
   var obstacleObjects = document.querySelectorAll("div.obstacle"); // liste tous les objets "obstacle"
   var obstacleCoordinates = ["obstacleCoordinates"]; // liste toutes les coordonnées de ces objets
@@ -152,9 +155,9 @@ function animate(pawn) {
     }
   }
 
-  // RÉALISATION DÉPLACEMENT *************************************************** DS/TODO
+  // RÉALISATION DÉPLACEMENT ***************************************************
 
-  /* Docstring à compléter */
+  /* Déplace la créature / décale le pion d'une case dans la direction demandée. */
 
   function moveLeft() {
     x -=25; // modification + enregistrement de la position en valeur brute
@@ -180,9 +183,12 @@ function animate(pawn) {
     pawn.style.top = posY; // application du style (propriété CSS)
   }
 
-  // CONTRÔLE DU DÉPLACEMENT *************************************************** DS/TODO
+  // CONTRÔLE DU DÉPLACEMENT ***************************************************
 
-  /* Docstring à compléter */
+  /* Les fonctions suivantes déclenchent les tests et les déplacements :
+  -- du bomberman : manuellement à l'aide des flèches directionnelles ;
+  -- des fantômes : automatiquement et aléatoirement, = tirage au sort.
+  Si les déplacements sont possibles, ils sont réalisés. */
 
   if (pawn.id == "player") {
 

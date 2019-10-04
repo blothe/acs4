@@ -1,6 +1,6 @@
-// CRÉATION DES PIONS ********************************************************** DS/TODO
+// CRÉATION DES PIONS **********************************************************
 
-/* Docstring à compléter */
+/* Génère le bomberman et ses "fantômes" antagonistes. */
 
 // ajout pion "player" au plateau de jeu
 var player = document.createElement("div"); // ... création d'un élément "div"
