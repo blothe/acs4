@@ -48,7 +48,7 @@ function animate(pawn) {
   var obstacleObjects = document.querySelectorAll("div.obstacle"); // liste tous les objets "obstacle"
   var obstacleCoordinates = ["obstacleCoordinates"]; // liste toutes les coordonnées de ces objets
   for (var obstacleObject of obstacleObjects) {
-    obstacleCoordinates[obstacleObject.id] =
+    obstacleCoordinates[obstacleObject.id.replace("cell", "")] =
     "[" + obstacleObject.style.left + " from left, " + obstacleObject.style.top + " from top]";
   }
 
@@ -220,9 +220,6 @@ function animate(pawn) {
         }
         break;
 
-        default:
-        alert("Flèches directionnelles uniquement !");
-
       }
 
     }
@@ -261,9 +258,6 @@ function animate(pawn) {
         }
         break;
 
-        default:
-        alert("Oups !")
-
       }
 
     }
@@ -272,7 +266,7 @@ function animate(pawn) {
 
 }
 
-animate(player);
-animate(ghost1);
-animate(ghost2);
-animate(ghost3);
+var pawns = [player, ghost1, ghost2, ghost3]; // liste des pions du jeu
+for (pawn of pawns) { // pour chacun de ces pions...
+  animate(pawn); // ... l'animer !
+}

@@ -7,7 +7,7 @@ var player = document.createElement("div"); // ... création d'un élément "div
 player.setAttribute("class", "player"); // ... appartenant à la classe "player"
 player.setAttribute("id", "player"); // ... portant l'identifiant unique "player"
 player.style.left = "0px"; // réglage CSS >> position par rapport au bord gauche
-player.style.top = "0px"; // réglage CSS >> position par rapport au bord droit
+player.style.top = "0px"; // réglage CSS >> position par rapport au bord haut
 player.innerHTML = "<img src=\"img/Bman_F_f00.png\">"; // insertion de l'image (avatar)
 document.getElementById("board").appendChild(player); // ajout au plateau de jeu
 
