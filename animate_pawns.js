@@ -160,7 +160,7 @@ function animate(pawn) {
   /* Déplace la créature / décale le pion d'une case dans la direction demandée. */
 
   function moveLeft() {
-    x -=25; // modification + enregistrement de la position en valeur brute
+    x -= 25; // modification + enregistrement de la position en valeur brute
     posX = x + "px"; // enregistrement de la position en pixels (CSS)
     pawn.style.left = posX; // application du style (propriété CSS)
   }
@@ -196,25 +196,25 @@ function animate(pawn) {
 
       switch (move.keyCode) {
 
-        case 37:
+        case 37: // flèche clavier gauche
         if (canMoveLeft()) {
           moveLeft();
         }
         break;
 
-        case 38:
+        case 38: // flèche clavier haut
         if (canMoveUp()) {
           moveUp();
         }
         break;
 
-        case 39:
+        case 39: // flèche clavier droite
         if (canMoveRight()) {
           moveRight();
         }
         break;
 
-        case 40:
+        case 40: // flèche clavier bas
         if (canMoveDown()) {
           moveDown();
         }
@@ -230,7 +230,7 @@ function animate(pawn) {
 
     function autoMove() {
 
-      var randMove = Math.floor(Math.random() * 4) + 1;
+      var randMove = Math.floor(Math.random() * 4) + 1; // tirage au sort
 
       switch (randMove) {
 
@@ -261,7 +261,7 @@ function animate(pawn) {
       }
 
     }
-    setInterval(autoMove, 250);
+    setInterval(autoMove, 250); // répétition toutes les 250 ms
   }
 
 }
