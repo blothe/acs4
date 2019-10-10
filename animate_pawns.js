@@ -11,15 +11,15 @@ function animate(pawn) {
 
     case "player":
     // coordonnées en valeur brute
-    var x = 0;
-    var y = 0;
+    var x = 250;
+    var y = 250;
     // coordonnées en pixels (CSS)
     var posX = x + "px";
     var posY = y + "px";
     break;
 
     case "ghost1":
-    var x = 500;
+    var x = 0;
     var y = 0;
     var posX = x + "px";
     var posY = y + "px";
@@ -27,12 +27,19 @@ function animate(pawn) {
 
     case "ghost2":
     var x = 500;
-    var y = 500;
+    var y = 0;
     var posX = x + "px";
     var posY = y + "px";
     break;
 
     case "ghost3":
+    var x = 500;
+    var y = 500;
+    var posX = x + "px";
+    var posY = y + "px";
+    break;
+
+    case "ghost4":
     var x = 0;
     var y = 500;
     var posX = x + "px";
@@ -266,7 +273,7 @@ function animate(pawn) {
 
 }
 
-var pawns = [player, ghost1, ghost2, ghost3]; // liste des pions du jeu
+var pawns = [player, ghost1, ghost2, ghost3, ghost4]; // liste des pions du jeu
 for (pawn of pawns) { // pour chacun de ces pions...
   animate(pawn); // ... l'animer !
 }

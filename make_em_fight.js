@@ -61,7 +61,7 @@ document.onkeypress = function(dropBomb) { // ajout pion "bomb" au plateau de je
           flame.innerHTML = "<img src=\"img/Flame_f01.png\">"; // insertion de l'image (flammes)
           document.getElementById("board").appendChild(flame); // ajout au plateau de jeu
           flames.push(flame); // ajout à la liste des objets "flamme"
-          var creatures = [player, ghost1, ghost2, ghost3];
+          var creatures = [player, ghost1, ghost2, ghost3, ghost4];
           for (creature of creatures) {
             if (creature.style.left == flame.style.left && creature.style.top == flame.style.top) {
               creature.remove(); // si une créature est touchée, elle est retirée de la partie...
@@ -81,7 +81,7 @@ document.onkeypress = function(dropBomb) { // ajout pion "bomb" au plateau de je
 
 // GHOST VICTORY ***************************************************************
 
-var ghosts = [ghost1, ghost2, ghost3];
+var ghosts = [ghost1, ghost2, ghost3, ghost4];
 
 var grimReaper = new MutationObserver(function(mutations) { // observation des mutations
   mutations.forEach(function killPlayer(mutation) { // à chaque fois qu'un changement de style est observé
@@ -106,7 +106,8 @@ var gameMaster = new MutationObserver(function(mutations) { // observation des m
     if (!board.contains(player)) {
       alert("Perdu !"); // s'il n'y a plus de "player", la partie est terminée et le joueur a perdu
     }
-    if (!board.contains(ghost1) && !board.contains(ghost2) && !board.contains(ghost3)) {
+    if (!board.contains(ghost1) && !board.contains(ghost2)
+    && !board.contains(ghost3) && !board.contains(ghost4)) {
       alert("Gagné !"); // s'il n'y a plus de fantômes, la partie est terminée et le joueur a gagné
     }
   });
